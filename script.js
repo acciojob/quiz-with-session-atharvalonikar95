@@ -51,12 +51,13 @@ function renderQuestions() {
     for (let j = 0; j < question.choices.length; j++) {
       const choice = question.choices[j];
       const choiceElement = document.createElement("input");
-      choiceElement.type = "radio";
-      choiceElement.name = `question-${i}`;
-      choiceElement.value = choice;
+	  choiceElement.setAttribute("type", "radio");
+	  choiceElement.setAttribute("name", question-${i});
+	  choiceElement.setAttribute("value", choice);
 	  // sessionStorage.setItem("progress",choice)
       if (progress[i] === choice) {
-        choiceElement.checked= true;
+        choiceElement.checked = true;
+        choiceElement.setAttribute("checked", "true");
       }
 	  choiceElement.addEventListener("change", () => {
         progress[i] = choice;
